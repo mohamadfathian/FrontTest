@@ -57,7 +57,6 @@ public class CrashBrowserTest {
         driver.findElement(By.id("authPassword-inp")).clear();
         driver.findElement(By.id("authPassword-inp")).sendKeys("Mm@13661366");
         driver.findElement(By.id("authLoginBtn")).click();
-
     }
 
     @AfterAll
