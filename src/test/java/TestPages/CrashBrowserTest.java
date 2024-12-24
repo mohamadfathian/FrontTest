@@ -1,3 +1,5 @@
+package TestPages;
+
 import dev.failsafe.internal.util.Assert;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;

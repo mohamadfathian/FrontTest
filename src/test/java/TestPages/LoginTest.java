@@ -1,11 +1,10 @@
-package src.test.TestPage.LoginTest;
+package TestPages;
 
 import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import
 
 
 

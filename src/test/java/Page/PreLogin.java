@@ -1,3 +1,5 @@
+package Page;
+
 import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,7 +19,7 @@ public class PreLogin {
     @BeforeAll
     static void beforeAll() {
 
-        driver =WebDriverManager.getDriver();
+        driver = WebDriverManager.getDriver();
         driver.get("https://digitalschool-front.sandpod.ir/javid");
 
     }
