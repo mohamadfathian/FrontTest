@@ -1,3 +1,5 @@
+package src.test.Page.Login;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,10 +14,6 @@ public class Login {
     public Login(WebDriver driver) {
         this.driver = driver;
     }
-
-    String userNameTextBoxId="authIdentity-inp";
-    String passTextBoxId="authPassword-inp";
-    String loginBtnLogin="authLoginBtn";
 
 
     public void setUserName(String username) {
