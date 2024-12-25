@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Login {
+
     private WebDriver driver;
     Locators locators=new Locators();
 
@@ -20,7 +21,6 @@ public class Login {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(locators.getUserNameTextBoxId())));
         element.sendKeys(username);
-        //driver.findElement(By.id(userNameTextBoxId)).sendKeys(username);
     }
 
     public void setPassword(String password) {

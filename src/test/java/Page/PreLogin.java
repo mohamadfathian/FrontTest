@@ -14,33 +14,25 @@ import java.time.Duration;
 
 public class PreLogin {
 
-    private  static WebDriver driver;
+    private  WebDriver driver;
 
-    @BeforeAll
-    static void beforeAll() {
-
-        driver = WebDriverManager.getDriver();
-        driver.get("https://digitalschool-front.sandpod.ir/javid");
-
+    public PreLogin(WebDriver driver) {
+        this.driver = driver;
     }
 
-    @Test
-    void testLoginBtn() {
+    public void validateTile() {
+        driver.get("https://digitalschool-front.sandpod.ir/javid");
+        String title = driver.getTitle();
+        System.out.println(title);
+        Assert.isTrue(title.equals("Podia"), "Title is not correct");
+    }
+
+    public void testLoginBtn() {
+        driver.get("https://digitalschool-front.sandpod.ir/javid");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[contains(text(),'ورود')]")));
 
         element.click();
-    }
-
-    @Test
-    public void validateTile() {
-        String title = driver.getTitle();
-        Assert.isTrue(title.equals("POD SandBox Login"), "Title is not correct");
-    }
-
-    @AfterAll
-    static void afterAll() {
-        WebDriverManager.closeDriver();
     }
 }

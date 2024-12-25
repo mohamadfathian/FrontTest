@@ -1,10 +1,10 @@
 package TestPages;
 
-import dev.failsafe.internal.util.Assert;
+import Page.WebDriverManager;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import Page.*;
+
 
 
 
@@ -14,14 +14,18 @@ public class LoginTest {
 
     @BeforeAll
     static void beforeAll() {
-        driver =WebDriverManager.getDriver();
-        driver.get("https://digitalschool-front.sandpod.ir/javid");
+        driver = WebDriverManager.getDriver();
     }
 
     @Test
     void testLogin() {
-        Login login=new Login();
-        System.err.println(login);
+        PreLogin preLogin = new PreLogin(WebDriverManager.getDriver());
+        preLogin.validateTile();
+        preLogin.testLoginBtn();
+        Login login=new Login(WebDriverManager.getDriver());
+        login.setUserName("m.fathian");
+        login.setPassword("Mm@13661366");
+        login.clickLoginBtn();
     }
 
 
