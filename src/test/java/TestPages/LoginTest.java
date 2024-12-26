@@ -27,6 +27,7 @@ public class LoginTest {
         panels.checkPanel();
     }
 
+    @AfterAll
     static void afterAll() {
         driver.quit();
     }
