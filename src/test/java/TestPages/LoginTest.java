@@ -16,15 +16,15 @@ public class LoginTest {
 
     @Test
     void testLogin() {
-        PreLogin preLogin = new PreLogin(WebDriverManager.getDriver());
+        PreLoginPage preLogin = new PreLoginPage(WebDriverManager.getDriver());
         preLogin.validateTile();
         preLogin.testLoginBtn();
-        Login login = new Login(WebDriverManager.getDriver());
-        login.setUserName("m.fathian");
-        login.setPassword("Mm@13661366");
-        login.clickLoginBtn();
-        Panels panels = new Panels(WebDriverManager.getDriver());
-        panels.checkPanel();
+        LoginPage loginPage = new LoginPage(WebDriverManager.getDriver());
+        loginPage.setUserName("m.fathian");
+        loginPage.setPassword("Mm@13661366");
+        loginPage.clickLoginBtn();
+        PanelsPage panelsPage = new PanelsPage(WebDriverManager.getDriver());
+        panelsPage.checkPanel();
     }
 
     @AfterAll

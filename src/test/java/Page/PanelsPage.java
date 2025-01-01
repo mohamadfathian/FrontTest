@@ -1,6 +1,5 @@
 package Page;
 
-import dev.failsafe.internal.util.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,12 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Panels {
+public class PanelsPage {
 
     private WebDriver driver;
     Locators locators=new Locators();
 
-    public Panels(WebDriver driver) {
+    public PanelsPage(WebDriver driver) {
         this.driver = driver;
     }
 

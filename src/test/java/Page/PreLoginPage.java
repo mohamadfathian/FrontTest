@@ -1,9 +1,6 @@
 package Page;
 
 import dev.failsafe.internal.util.Assert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,11 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class PreLogin {
+public class PreLoginPage {
 
     private  WebDriver driver;
 
-    public PreLogin(WebDriver driver) {
+    public PreLoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
