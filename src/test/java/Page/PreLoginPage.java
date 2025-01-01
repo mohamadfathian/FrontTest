@@ -17,19 +17,19 @@ public class PreLoginPage {
         this.driver = driver;
     }
 
+
     public void validateTile() {
-        driver.get("https://digitalschool-front.sandpod.ir/javid");
         String title = driver.getTitle();
         System.out.println(title);
         Assert.isTrue(title.equals("Podia"), "Title is not correct");
     }
 
-    public void testLoginBtn() {
-        driver.get("https://digitalschool-front.sandpod.ir/javid");
+    public LoginPage clickLogin() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("//button[contains(text(),'ورود')]")));
 
         element.click();
+        return new LoginPage(driver);
     }
 }

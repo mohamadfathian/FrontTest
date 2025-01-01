@@ -16,19 +16,16 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    private By txtAuthIdentityInp=By.id("authIdentity-inp");
+    private By txtAuthPasswordInp=By.id("authPassword-inp");
+    private By txtAuthLoginBtn=By.id("authLoginBtn");
 
-    public void setUserName(String username) {
+    public PanelsPage performLogin(String username, String password) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(locators.getUserNameTextBoxId())));
-        element.sendKeys(username);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("authIdentity-inp")));
+        driver.findElement(txtAuthIdentityInp).sendKeys(username);
+        driver.findElement(txtAuthPasswordInp).sendKeys(password);
+        driver.findElement(txtAuthLoginBtn).click();
+        return new PanelsPage(driver);
     }
-
-    public void setPassword(String password) {
-        driver.findElement(By.id(locators.getPassTextBoxId())).sendKeys(password);
-    }
-
-    public void clickLoginBtn() {
-        driver.findElement(By.id(locators.getLoginBtnLogin())).click();
-    }
-
 }
